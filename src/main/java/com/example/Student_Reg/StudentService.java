@@ -28,6 +28,9 @@ public class StudentService {
     }
 
     public void deleteStudent(int id) {
+        if (!repo.existsById(id)) {
+            throw new StudentNotFoundException("Student not found with id: " + id);
+        }
         repo.deleteById(id);
     }
 }

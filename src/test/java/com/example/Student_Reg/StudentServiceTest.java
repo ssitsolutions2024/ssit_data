@@ -16,8 +16,10 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class StudentServiceTest {
 
-    @Mock
+    @Mock(lenient = true)
     private StudentRepository repo;
+
+
 
     @InjectMocks
     private StudentService service;
